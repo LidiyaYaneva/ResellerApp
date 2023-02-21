@@ -1,4 +1,4 @@
-package com.resellerapp.validation.validation;
+package com.resellerapp.valid;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

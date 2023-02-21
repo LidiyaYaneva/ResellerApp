@@ -1,7 +1,7 @@
-package com.resellerapp.validation.validation;
-
+package com.resellerapp.valid;
 
 import com.resellerapp.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;

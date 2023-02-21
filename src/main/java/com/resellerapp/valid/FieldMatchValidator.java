@@ -1,4 +1,4 @@
-package com.resellerapp.validation.validation;
+package com.resellerapp.valid;
 
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.PropertyAccessorFactory;
@@ -16,9 +16,9 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
 
     @Override
     public void initialize(FieldMatch constraintAnnotation) {
-       this.first = constraintAnnotation.first();
-       this.second = constraintAnnotation.second();
-       this.message = constraintAnnotation.message();
+        this.first = constraintAnnotation.first();
+        this.second = constraintAnnotation.second();
+        this.message = constraintAnnotation.message();
     }
 
     @Override

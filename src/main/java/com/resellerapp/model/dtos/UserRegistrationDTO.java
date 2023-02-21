@@ -1,20 +1,24 @@
 package com.resellerapp.model.dtos;
 
+import com.resellerapp.valid.FieldMatch;
+import com.resellerapp.valid.UniqueEmail;
+import com.resellerapp.valid.UniqueUsername;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-@com.resellerapp.validation.validation.FieldMatch(first = "password", second = "confirmPassword" , message = "Passwords do not match.")
+@FieldMatch(first = "password", second = "confirmPassword", message = "Passwords do not match.")
 public class UserRegistrationDTO {
 
     @NotBlank (message = "Username cannot be empty")
     @Size(min = 3, max = 20, message = "Username length must be between 3 and 20 characters.")
-    @com.resellerapp.validation.validation.UniqueUsername(message = "Username is already taken!")
+    @UniqueUsername
     private String username;
 
     @NotBlank (message = "Email cannot be empty")
     @Email (message = "Provide valid email")
-    @com.resellerapp.validation.validation.UniqueEmail(message = "Email already exists!")
+    @UniqueEmail
     private String email;
 
     @NotBlank

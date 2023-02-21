@@ -84,7 +84,7 @@ public class OfferService {
 
     public List<DisplayOfferDTO> otherOffers () {
         Long currentUserId = this.currentUser.getId();
-        List<Offer> offers = this.offerRepository.findAllByCreatorIdNot(currentUserId);
+        List<Offer> offers = this.offerRepository.findAllByCreatorIdNotAndBuyerIsNull(currentUserId);
 
         DisplayOfferDTO[] displayOtherOffersDTOS = this.modelMapper.map(offers, DisplayOfferDTO[].class);
 

@@ -14,7 +14,7 @@ public interface OfferRepository extends JpaRepository<Offer, Long> {
 
     List<Offer> findAllByCreator(User creator);
 
-    List<Offer> findAllByCreatorIdNot(Long creatorId);
+    List<Offer> findAllByCreatorIdNotAndBuyerIsNull(Long creatorId);
 
     List<Offer> findAllByBuyerId(Long buyerId);
 }
